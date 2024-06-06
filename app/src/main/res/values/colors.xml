@@ -1,0 +1,12 @@
+<?xml version="1.0" encoding="utf-8"?>
+<resources>
+    <color name="black">#FF000000</color>
+    <color name="white">#FFFFFFFF</color>
+    <color name="oxford_blue">#000022</color>
+    <color name="penn_blue">#001242</color>
+    <color name="anti_flash_white">#EBEBEB</color>
+    <color name="non_photo_blue">#99E6FF</color>
+    <color name="rich_black">#040F16</color>
+    
+
+</resources>

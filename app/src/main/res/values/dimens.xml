@@ -1,0 +1,11 @@
+<resources>
+    <dimen name="fab_margin">16dp</dimen>
+    <dimen name="scrollview_padding">10dp</dimen>
+    <dimen name="card_margin_bottom">30dp</dimen>
+    <dimen name="card_padding">25dp</dimen>
+    <dimen name="card_corner_radius">12dp</dimen>
+
+
+    <dimen name="small_text">12sp</dimen>
+    <dimen name="medium_text">16sp</dimen>
+</resources>
