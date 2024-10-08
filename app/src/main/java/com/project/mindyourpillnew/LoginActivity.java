@@ -14,7 +14,7 @@ import java.util.ArrayList;
 public class LoginActivity extends AppCompatActivity {
 
     ActivityLoginBinding binding;
-    private EditText email, password, confirmPassword;
+    private EditText email, password;
     private TextView signup;
     private Button loginButton;
     private UserRepository userRepository = new UserRepository();
@@ -27,7 +27,6 @@ public class LoginActivity extends AppCompatActivity {
 
         email = binding.txtEmail;
         password = binding.txtPassword;
-        confirmPassword = binding.txtConfirm;
         signup = binding.signupRedirect;
         loginButton = binding.btnLogin;
 
@@ -48,23 +47,16 @@ public class LoginActivity extends AppCompatActivity {
     }
 
     private boolean validateInput() {
-        if (email.getText().toString().isEmpty() || password.getText().toString().isEmpty() || confirmPassword.getText().toString().isEmpty()) {
+        if (email.getText().toString().isEmpty() || password.getText().toString().isEmpty()) {
             email.setError("All fields must be filled");
             password.setError("All fields must be filled");
-            confirmPassword.setError("All fields must be filled");
             return false;
         }
 
-        if (!password.getText().toString().equals(confirmPassword.getText().toString())) {
-            confirmPassword.setError("Passwords do not match");
-            confirmPassword.requestFocus();
+        if(!userRepository.checkUser(email.getText().toString(), password.getText().toString())){
+            email.setError("Email not found or password is incorrect");
             return false;
         }
-        if(userRepository.checkUser(email.getText().toString(), password.getText().toString())){
-            email.setError("User already exists");
-            email.requestFocus();
-            return false;
-        }
-        return userRepository.checkUser(email.getText().toString(), password.getText().toString());
+        return true;
     }
 }

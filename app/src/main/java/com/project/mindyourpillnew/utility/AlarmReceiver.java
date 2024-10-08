@@ -29,7 +29,7 @@ public class AlarmReceiver extends BroadcastReceiver {
         resultIntent.putExtra("medTime",intent.getStringExtra("medTime"));
         resultIntent.putExtra("medQty",intent.getStringExtra("medQty"));
         resultIntent.putExtra("userName",intent.getStringExtra("userName"));
-        PendingIntent resultPendingIntent = PendingIntent.getActivity(context,1,resultIntent,PendingIntent.FLAG_UPDATE_CURRENT);
+        PendingIntent resultPendingIntent = PendingIntent.getActivity(context,1,resultIntent,PendingIntent.FLAG_IMMUTABLE);
         Notification notification = new NotificationCompat.Builder(context,CHANNEL_ID)
                 .setSmallIcon(R.drawable.ic_notifications_black_24dp)
                 .setContentTitle("Medicine Reminder")
